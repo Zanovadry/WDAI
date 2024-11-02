@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+  border: 5px solid black;
+}
+
+.navbar {
+  width: 100%;
+  background-color: grey;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 25%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.navbar a.active {
+  background-color: #04aa6d;
+}
