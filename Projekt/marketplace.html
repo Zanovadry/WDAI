@@ -5,21 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header>
-      <div class="center">
-        <h1>Aukcje</h1>
+      <div>
+        <h1 style="margin-bottom: 0">Autolegends</h1>
+        <h5 style="margin-top: 0">Samochody lat 90</h5>
       </div>
     </header>
     <nav>
-      <div calss="flex-container">
-        <div>
-          <a href="marketplace.html">Aukcje</a>
-          <a href="home.html">Główna</a>
-          <a href="configurator.html">Konfigurator</a>
-        </div>
-      </div>
+      <ul>
+        <li><a class="active" href="marketplace.html">Aukcje</a></li>
+        <li><a href="home.html">Główna</a></li>
+        <li><a href="configurator.html">Konfigurator</a></li>
+      </ul>
     </nav>
+    <section>
+      <p>tutaj aukcje są</p>
+    </section>
+    <section>
+      <form>
+        <div>
+          <label for="cars">Wybierz markę samochodu:</label>
+          <select name="brand" id="brand">
+            <option value="placeholder">--wybierz markę--</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+        <div>
+          <label for="carType">Wybierz typ samochodu</label>
+          <select name="carType" id="carType">
+            <option value="placeholder">--wybierz typ--</option>
+            <option value="coupe">Coupe</option>
+            <option value="cabrio">Cabrio</option>
+            <option value="sedan">Sedan</option>
+          </select>
+        </div>
+        <div>
+          <label for="carPrice">Podaj cenę samochodu:</label>
+          <input
+            id="carPrice"
+            name="carPrice"
+            type="number"
+            placeholder="podaj cenę"
+          />
+          <div id="carPriceError" class="correctPriceInput">
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Niepoprawna wartość
+            </p>
+          </div>
+        </div>
+        <div>
+          <label for="carStatus">Stan techniczny: </label>
+        </div>
+        <div>
+          <input id="carIsBroken" name="carStatus" type="radio" />Uszkodzony
+          <input id="carIsWorking" name="carStatus" type="radio" />Nieuszkodzony
+        </div>
+        <div>
+          <button id="buttonSend">Jestem zajebisty</button>
+        </div>
+        <div id="randomDiv"></div>
+      </form>
+    </section>
   </body>
 </html>
