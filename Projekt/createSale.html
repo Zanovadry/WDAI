@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autolegends</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1 style="margin-bottom: 0">Autolegends</h1>
+        <h5 style="margin-top: 0">Samochody lat 90</h5>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a class="active" href="marketplace.html">Rynek</a></li>
+        <li><a href="home.html">Główna</a></li>
+        <li><a href="about.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <section>
+      <button class="backButton">
+        <a href="marketplace.html">&#10006;</a>
+      </button>
+      <p>Dodaj nowe ogłoszenie</p>
+    </section>
+    <section class="createSale">
+      <form>
+        <div>
+          <label for="title">Tytuł ogłoszenia</label><br />
+          <input
+            id="title"
+            name="title"
+            type="text"
+            placeholder="podaj tytuł ogłoszenia"
+            minlength="5"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div>
+          <label for="description">Opis</label><br />
+          <textarea
+            id="description"
+            name="description"
+            placeholder="podaj opis ogłoszenia"
+            minlength="50"
+            rows="6"
+            cols="75"
+            wrap="soft"
+            spellcheck="true"
+            required
+          ></textarea>
+        </div>
+        <div>
+          <label for="photos">Zdjęcia</label><br />
+          <input
+            id="photos"
+            name="photos"
+            type="file"
+            placeholder="dodaj zdjęcia [png/jpeg]"
+            accept="image/png, image/jpeg"
+            required
+            onchange="imagePreview(event)"
+          />
+          <img id="carPhoto" class="noPhoto" width="100" height="100" />
+        </div>
+        <div>
+          <label for="carPrice">Cena samochodu</label><br />
+          <input
+            id="carPrice"
+            name="carPrice"
+            type="number"
+            placeholder="podaj cenę [zł]"
+            min="0"
+            max="100000000"
+            required
+            onkeypress="return numberInputValidator(event)"
+          />
+          <div id="carPriceError" class="correctInput">
+            <p>Wartość musi być mniejsza niż 100 000 000</p>
+          </div>
+        </div>
+        <div>
+          <label for="cars">Marka samochodu</label><br />
+          <select name="brand" id="brand" required>
+            <option value="" disabled selected>--wybierz markę--</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+            <option value="other">Inne</option>
+          </select>
+        </div>
+        <div>
+          <label for="carModel">Model samochodu</label><br />
+          <input
+            id="carModel"
+            name="carModel"
+            type="text"
+            placeholder="podaj model samochodu"
+            maxlength="25"
+            required
+          />
+        </div>
+        <div>
+          <label for="carType">Typ nadwozia</label><br />
+          <select name="carType" id="carType" required>
+            <option value="" disabled selected>--wybierz typ--</option>
+            <option value="coupe">Coupe</option>
+            <option value="cabrio">Cabrio</option>
+            <option value="sedan">Sedan</option>
+            <option value="other">Inne</option>
+          </select>
+        </div>
+        <div>
+          <label for="carColor">Kolor</label><br />
+          <input
+            name="carColor"
+            id="carColor"
+            type="color"
+            placeholder="wybierz Kolor"
+          />
+        </div>
+        <div>
+          <label for="manufactureYear">Rok produkcji</label><br />
+          <input
+            name="manufactureYear"
+            id="manufactureYear"
+            type="number"
+            placeholder="podaj rok produkcji"
+            min="1990"
+            max="1999"
+            onkeypress="return numberInputValidator(event)"
+            required
+          />
+          <div id="manufactureYearError" class="correctInput">
+            <p>Roczniki wyłącznie z zakresu 1990-1999</p>
+          </div>
+        </div>
+        <div>
+          <label for="engineType">Typ silnika</label><br />
+          <input
+            name="engineType"
+            id="engineType"
+            type="text"
+            placeholder="podaj typ silnika np: TDI"
+            required
+          />
+        </div>
+        <div>
+          <label for="engineCapacity">Pojemność silnika</label><br />
+          <input
+            name="engineCapacity"
+            id="engineCapacity"
+            type="number"
+            placeholder="podaj pojemność silnika [dm³]"
+            onkeypress="return numberInputValidator(event)"
+            required
+          />
+        </div>
+        <div>
+          <label for="engineType">Moc</label><br />
+          <input
+            name="engineType"
+            id="engineType"
+            type="text"
+            placeholder="podaj moc silnika [hp]"
+            onkeypress="return numberInputValidator(event)"
+            required
+          />
+        </div>
+        <div>
+          <label for="mileage">Przebieg</label><br />
+          <input
+            name="mileage"
+            id="mileage"
+            type="number"
+            placeholder="podaj przebieg [km]"
+            onkeypress="return numberInputValidator(event)"
+            required
+          />
+        </div>
+        <div>
+          <label for="carSteeringWheel">Kierownica</label><br />
+          <input
+            id="steeringWheelLeft"
+            name="carSteeringWheel"
+            type="radio"
+            required
+          />Po lewej
+          <input
+            id="steeringWheelRight"
+            name="carSteeringWheel"
+            type="radio"
+            required
+          />Po prawej
+        </div>
+        <div>
+          <label for="carStatus">Stan techniczny</label><br />
+          <input
+            id="carIsBroken"
+            name="carStatus"
+            type="radio"
+            required
+          />Uszkodzony
+          <input
+            id="carIsWorking"
+            name="carStatus"
+            type="radio"
+            required
+          />Nieuszkodzony
+        </div>
+        <div>
+          <button id="buttonSend">Dodaj ogłoszenie</button>
+        </div>
+      </form>
+    </section>
+    <footer><p>Marcel Pokrywka 2024</p></footer>
+  </body>
+</html>
