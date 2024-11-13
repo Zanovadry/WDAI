@@ -18,20 +18,60 @@
       <ul>
         <li><a href="marketplace.html">Rynek</a></li>
         <li><a href="home.html">Główna</a></li>
-        <li><a href="configurator.html">Konfigurator</a></li>
-        <li><a class="active" href="about.html">O nas</a></li>
+        <li><a class="active" href="about.html">Kontakt</a></li>
       </ul>
     </nav>
-    <section>
-      Dodaj możliwość kontaktu i rozwiń opis
+    <section class="contact">
       <p>Witaj w <b>Autolegends</b></p>
-      <p>Daj się ponieść emocjom i kup swój wymarzony old-schoolowy samochód</p>
-      <p>
-        Możesz również sprzedać swojego klasyka,<br />
-        aby inny miłośnik motoryzacji mógł cieszyć się jego pięknem, bądź dać mu
-        drugie życie
-      </p>
-      <p>Jedyne takie miejsce, zrzeszające fanatyków klasycznej motoryzacji</p>
+      <p>Jedyne takie miejsce zrzeszające fanatyków klasycznej motoryzacji</p>
+      <p>Kup swój wymarzony samochód już dziś!</p>
     </section>
+    <section class="contact">
+      <div>
+        <p>
+          Kupując poprzez naszą stronę, masz pewność że sprzedawca nic nie zatai
+        </p>
+        <p>
+          Dzięki programowi ochrony kupującego, masz pół roczną gwarancję, że
+          samochód jest w kondycji, w jakiej go ogłaszano
+        </p>
+        <p>
+          W razie potrzeby zgłoszenia oszustwa, skontaktuj się z nami poprzez
+          poniższy formularz
+        </p>
+      </div>
+      <div>
+        <form id="messageForm">
+          <div>
+            <label for="email">Email</label><br />
+            <input
+              name="email"
+              id="email"
+              type="email"
+              placeholder="podaj swój email"
+              required
+            />
+          </div>
+          <div>
+            <label for="message">Wiadomość</label><br />
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              cols="75"
+              wrap="soft"
+              spellcheck="true"
+              placeholder="napisz wiadomość"
+              minlength="50"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <button id="messageSendButton">Wyślij</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer><p>Marcel Pokrywka 2024</p></footer>
   </body>
 </html>

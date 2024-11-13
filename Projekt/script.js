@@ -7,9 +7,9 @@ let manufactureYearError = document.querySelector("#manufactureYearError");
 let manufactureYear = document.querySelector("#manufactureYear");
 let carPhoto = document.querySelector("#carPhoto");
 let sale = document.querySelectorAll(".sale");
+let messageSend = document.querySelector("#messageForm");
 
 function imagePreview(event) {
-  console.log(event.target.files.length);
   if (event.target.files.length == 1) {
     carPhoto.className = "photo";
     carPhoto.src = URL.createObjectURL(event.target.files[0]);
@@ -23,11 +23,8 @@ function numberInputValidator(event) {
 }
 
 try {
-  buttonSend.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (!carIsBroken.checked && !carIsWorking.checked) {
-      alert("Uzupełnij wszystkie opcje");
-    }
+  messageSend.addEventListener("submit", (event) => {
+    alert("Formularz pomyślnie wysłano!");
   });
 } catch {}
 
@@ -65,6 +62,7 @@ try {
   });
 } catch {}
 
+//enlarge sale description on click
 try {
   sale.forEach((sale) => {
     let isOpen = false;

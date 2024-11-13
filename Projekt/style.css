@@ -8,8 +8,31 @@
 
 body,
 html {
+  min-height: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: Ferrari;
+  src: url(FerroRosso.ttf);
+}
+
+@font-face {
+  font-family: GoodTimes;
+  src: url(good\ times\ rg.otf);
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(15, 0, 0, 0.75)),
+    url("background.jpeg");
+  background-size: cover;
+  background-position: right top;
+}
+
+body {
+  font-family: "GoodTimes";
 }
 
 header {
@@ -17,15 +40,22 @@ header {
 }
 
 header div {
+  font-family: "Ferrari";
+  font-size: 25px;
   text-align: center;
-  border: 5px solid black;
+  border: 5px solid rgba(238, 235, 221, 0.5);
   border-radius: 4px;
+}
+
+header h1,
+h5 {
+  color: rgb(206, 18, 18);
 }
 
 nav {
   position: sticky;
   top: 0;
-  background-color: grey;
+  background-color: rgb(27, 23, 23);
   margin-bottom: 8px;
   margin-top: 8px;
 }
@@ -63,21 +93,8 @@ section {
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
-  background-color: lightgrey;
-}
-
-@media (max-width: 1000px) {
-  section {
-    margin-left: 7.5%;
-    margin-right: 7.5%;
-  }
-}
-
-@media (max-width: 350px) {
-  section {
-    margin-left: 2%;
-    margin-right: 2%;
-  }
+  background-color: rgba(238, 235, 221, 0.5);
+  border-radius: 4px;
 }
 
 section p {
@@ -96,7 +113,7 @@ section p {
 .incorrectInput p {
   margin: 0;
   font-size: 12px;
-  color: red;
+  color: rgb(180, 18, 18);
 }
 
 .noPhoto {
@@ -108,24 +125,26 @@ section p {
   margin: 5px;
 }
 
-.newAuctionButton {
+.newSaleButton {
   display: block;
+  max-width: fit-content;
+  max-height: fit-content;
   float: right;
 
-  background-color: rgb(0, 200, 0);
+  background-color: rgb(0, 175, 0);
 
-  border: 2px solid rgb(0, 100, 0);
+  border: 2px solid rgb(0, 75, 0);
   border-radius: 4px;
 
-  margin: 4px;
+  margin: 10px;
   padding: 4px 0px;
 
   text-align: center;
   cursor: pointer;
 }
 
-.newAuctionButton a {
-  color: rgb(0, 100, 0);
+.newSaleButton a {
+  color: rgb(0, 75, 0);
   text-decoration: none;
   padding: 6px 15px;
 }
@@ -153,12 +172,29 @@ section p {
   padding: 6px 10px;
 }
 
-form div {
-  margin: 5px;
+.createSale {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
 }
 
-textarea {
+form div {
+  margin: 8px;
+}
+
+form div select,
+form div textarea,
+form div input {
+  border: 0;
+  border-radius: 4px;
+}
+
+form div select {
+  width: 150px;
+}
+
+form div textarea {
   resize: none;
+  max-width: 100%;
 }
 
 form div input {
@@ -167,6 +203,10 @@ form div input {
 
 form div input[type="radio"] {
   width: auto;
+}
+
+form button {
+  border-radius: 4px;
 }
 
 section.gallery {
@@ -194,10 +234,14 @@ div.gallery img {
 
 div.gallery a {
   text-decoration: none;
+  color: black;
 }
 
 div.description {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
   text-align: center;
 }
 
@@ -207,11 +251,8 @@ section.sales {
   flex-direction: column;
 }
 
-div.gallery {
-  width: 30%;
-}
-
 div.sale {
+  font-family: "Roboto", sans-serif;
   display: flex;
   text-decoration: none;
   border: 2px solid black;
@@ -315,6 +356,7 @@ dl {
 
 dd,
 dt {
+  font-size: 14px;
   border: 1.5px solid black;
   border-top: 0;
   border-left: 0;
@@ -335,7 +377,7 @@ dt {
   font-weight: bold;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1300px) {
   dl:last-of-type {
     display: none;
   }
@@ -347,7 +389,7 @@ dt {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   dl:last-of-type {
     display: grid;
   }
@@ -372,6 +414,26 @@ dt {
     width: 100%;
     height: auto;
   }
+  section {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+  }
+  .contact p {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 800px) {
+  .salesHeading {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .description {
+    font-size: smaller;
+  }
+  div.gallery {
+    width: 45%;
+  }
 }
 
 @media (max-width: 650px) {
@@ -387,4 +449,43 @@ dt {
   dd {
     border-right: 0;
   }
+  .description {
+    font-size: medium;
+  }
+  div.gallery {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  nav ul li a {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  nav ul {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  section {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+
+#messageForm {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+footer {
+  padding: 26px 0 13px;
+}
+
+footer p {
+  text-align: center;
+  font-size: small;
+  color: white;
 }
