@@ -475,7 +475,8 @@ dt {
   }
 }
 
-#messageForm {
+#messageForm,
+.contact {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
@@ -488,4 +489,8 @@ footer p {
   text-align: center;
   font-size: small;
   color: white;
+}
+
+select#subject {
+  width: 200px;
 }
