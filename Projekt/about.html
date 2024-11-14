@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Autolegends</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
   </head>
@@ -21,7 +21,7 @@
         <li><a class="active" href="about.html">Kontakt</a></li>
       </ul>
     </nav>
-    <section class="contact">
+    <section>
       <p>Witaj w <b>Autolegends</b></p>
       <p>Jedyne takie miejsce zrzeszające fanatyków klasycznej motoryzacji</p>
       <p>Kup swój wymarzony samochód już dziś!</p>
@@ -51,6 +51,16 @@
               placeholder="podaj swój email"
               required
             />
+          </div>
+          <div>
+            <label for="subject">Temat wiadomości</label> <br />
+            <select name="subject" id="subject" required>
+              <option value="" disabled selected>--wybierz temat--</option>
+              <option value="problemWithBuyer">Problemy ze sprzedawcą</option>
+              <option value="problemWithCar">Problemy z samochodem</option>
+              <option value="mercedes">Sugestie</option>
+              <option value="other">Inny</option>
+            </select>
           </div>
           <div>
             <label for="message">Wiadomość</label><br />
