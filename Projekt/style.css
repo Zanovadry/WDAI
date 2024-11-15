@@ -282,7 +282,6 @@ div.saleDetails {
   flex-direction: column;
   justify-content: space-between;
   padding: 8px;
-  width: 70%;
 }
 
 div.saleDetails div {
@@ -475,7 +474,6 @@ dt {
   }
 }
 
-#messageForm,
 .contact {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
