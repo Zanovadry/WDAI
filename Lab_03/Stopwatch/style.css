@@ -4,14 +4,10 @@
 }
 
 .stopwatchButtons button {
-  width: 10%;
+  width: auto;
 }
 
 .stopwatchTimer {
   display: flex;
   justify-content: center;
-}
-
-body {
-  margin: 50px;
 }
