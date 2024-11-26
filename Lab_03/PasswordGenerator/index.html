@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div>
+      <form id="passwordGeneratorForm">
+        <label for="minLenght">Minimalna długość hasła:</label>
+        <input type="number" id="minLength" name="minLength" min="0" required />
+        <br />
+
+        <label for="maxLenght">Maksymalna długość hasła:</label>
+        <input type="number" id="maxLength" name="maxLength" min="0" required />
+        <br />
+
+        <input type="checkbox" id="isUpperCase" name="isUpperCase" />
+        <label for="isUpperCase">Czy hasło ma zawierać wielkie litery?</label>
+        <br />
+
+        <input
+          type="checkbox"
+          id="isSpecialCharacters"
+          name="isSpecialCharacters"
+        />
+        <label for="isSpecialCharacters"
+          >Czy hasło ma zawierać znaki specjalne?</label
+        ><br />
+        <button id="generatePasswordButton">Wygeneruj hasło</button>
+        <button type="button" id="clearForm">Wyczyść</button>
+      </form>
+    </div>
+  </body>
+</html>

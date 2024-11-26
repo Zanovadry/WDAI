@@ -1,0 +1,17 @@
+.stopwatchButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.stopwatchButtons button {
+  width: 10%;
+}
+
+.stopwatchTimer {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 50px;
+}
