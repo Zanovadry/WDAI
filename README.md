@@ -1,4 +1,4 @@
-If you are here, keep in mind that all this stuff are just assigments for uni
+If you're here, keep in mind that all of this is just assignments for uni
 
 https://zanovadry.github.io/WDAI/Projekt/home.html
 
