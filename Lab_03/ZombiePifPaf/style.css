@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  cursor: url("Assets/aim.png") 64 64, pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+canvas {
+  display: block;
+  background-color: #000;
+}
+
+div {
+  position: absolute;
+}
+
+#livesBox img {
+  width: 75px;
+  margin-right: 5px;
+}
+
+#gameOver {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+#restartButton {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+}
+
+#scoreBox {
+  top: 20px;
+  right: 50px;
+  color: white;
+  font-size: 100px;
+}

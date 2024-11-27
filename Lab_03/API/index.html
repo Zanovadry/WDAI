@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>API</title>
+  </head>
+  <body>
+    <h1>Lista produktów</h1>
+    <div class="options">
+      <input type="text" id="filterInput" placeholder="Podaj filtr" /><br />
+      <div>
+        <label for="sortSelect">Sortowanie: </label>
+        <select id="sortSelect">
+          <option value="default">Domyślnie</option>
+          <option value="ascending">Rosnąco</option>
+          <option value="descending">Malejąco</option>
+        </select>
+      </div>
+    </div>
+    <table id="productsTable">
+      <thead>
+        <tr>
+          <th id="number">Lp</th>
+          <th id="photo">Zdjęcie</th>
+          <th id="title">Tytuł</th>
+          <th id="description">Opis</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
