@@ -6,6 +6,6 @@ https://zanovadry.github.io/WDAI/Lab_03/Stopwatch/stopwatch.html
 
 https://zanovadry.github.io/WDAI/Lab_03/PasswordGenerator/index.html
 
--strona api-
-
 https://zanovadry.github.io/WDAI/Lab_03/ZombiePifPaf/index.html
+
+https://zanovadry.github.io/WDAI/Lab_03/API/index.html
