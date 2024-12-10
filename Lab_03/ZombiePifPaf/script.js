@@ -93,6 +93,7 @@ function increaseZombieSpawnRate(timestamp) {
     }
     lastInterval = timestamp;
   }
+  console.log(spawnInterval);
 }
 
 function spawnZombies(timestamp, dificulty) {
@@ -101,7 +102,6 @@ function spawnZombies(timestamp, dificulty) {
     zombies.push(zombie);
     lastSpawnTime = timestamp;
   }
-  increaseZombieSpawnRate(timestamp);
 }
 
 function moveZombies(timestamp) {
@@ -191,6 +191,7 @@ function gameLoop(timestamp) {
   ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
   spawnZombies(timestamp, dificulty);
+  increaseZombieSpawnRate(timestamp);
   moveZombies(timestamp);
   if (isGameOver) {
     return;
