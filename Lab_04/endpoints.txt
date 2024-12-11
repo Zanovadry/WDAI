@@ -1,0 +1,67 @@
+### pobranie wszystkich dostępnych książek (bez podania parametru)
+
+http://localhost:3000/api/books
+
+### pobranie jednej konkretnej ksiązki (ID ksiązki)
+
+http://localhost:3000/api/books/1
+
+### dodanie nowej ksiązki do księgarni
+
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+  "title": "Sample Book",
+  "author": "John Doe",
+  "year": 2023
+}
+
+### pobranie wszystkich zamówień użytkownika
+
+GET http://localhost:3000/api/orders/1
+
+### dodanie zamówienia
+
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+  "book_id": 2,
+  "quantity": 5
+}
+
+### usunięcie zamówienia
+
+DELETE http://localhost:3000/api/orders/1
+
+###
+
+PATCH http://localhost:3000/api/orders/2
+Content-Type: application/json
+
+{
+  "quantity": 22
+}
+
+### założenie konta w księgarni (rejestracja)
+
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+  "email": "zdzichu.paleta@email.com",
+  "password": "drogoPanie"
+}
+
+### logowanie do księgarni
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+  "email": "zdzichu.paleta@email.com",
+  "password": "drogoPanie"
+}
+
+
