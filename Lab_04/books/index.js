@@ -21,7 +21,7 @@ app.get("/api/books", (req, res) => {
   var sql = "select * from books";
   db.query(sql, (err, result) => {
     if (result) {
-      res.send(JSON.stringify(result));
+      res.json(result);
       return;
     }
     var error = {
@@ -39,7 +39,7 @@ app.get("/api/books/:id", (req, res) => {
     var error;
     if (result) {
       if (result.length > 0) {
-        res.send(JSON.stringify(result));
+        res.json(result);
         return;
       }
       error = {
@@ -73,7 +73,7 @@ app.delete("/api/books/:id", (req, res) => {
   const id = req.params.id;
   const sql = "delete from books where bookID = ?";
 
-  db.query(sql, (err, result) => {
+  db.query(sql, [id], (err, result) => {
     if (err) {
       res
         .status(500)

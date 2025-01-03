@@ -17,6 +17,10 @@ Content-Type: application/json
   "year": 2023
 }
 
+### usunięcie ksiązki ze sklepu (ID książki)
+
+DELETE http://localhost:3000/api/books/14
+
 ### pobranie wszystkich zamówień użytkownika
 
 GET http://localhost:3000/api/orders/1
@@ -27,7 +31,7 @@ POST http://localhost:3000/api/orders
 Content-Type: application/json
 
 {
-  "book_id": 2,
+  "book_id": 999999,
   "quantity": 5
 }
 
