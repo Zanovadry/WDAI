@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Hasło() {
+function Haslo() {
     const [message, setMessage] = useState("Proszę wprowadzić hasło");
     const [passwordValue, setPasswordValue] = useState("");
     const [repeatPasswordValue, setRepeatPasswordValue] = useState("");
@@ -44,4 +44,4 @@ function Hasło() {
     );
 }
 
-export default Hasło;
+export default Haslo;

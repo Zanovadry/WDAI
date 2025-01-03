@@ -1,16 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Logowanie() {
-    const [isDisabled, setIsDisabled] = useState(true);
-    const [passwordValue, setPasswordValue] = useState("");
-    const [repeatPasswordValue, setRepeatPasswordValue] = useState("");
-    const [loginValue, setLoginValue] = useState("");
+    const [isDisabled, setIsDisabled] = useState<boolean>(true);
+    const [passwordValue, setPasswordValue] = useState<string>("");
+    const [repeatPasswordValue, setRepeatPasswordValue] = useState<string>("");
+    const [loginValue, setLoginValue] = useState<string>("");
 
-    function UpdateButton(
-        passwordValue: string,
-        repeatPasswordValue: string,
-        loginValue: string
-    ) {
+    useEffect(() => {
         if (
             passwordValue.length == 0 ||
             repeatPasswordValue.length == 0 ||
@@ -20,7 +16,7 @@ function Logowanie() {
             return;
         }
         setIsDisabled(false);
-    }
+    }, [passwordValue, repeatPasswordValue, loginValue]);
 
     function Login() {
         if (passwordValue != repeatPasswordValue) {
@@ -39,11 +35,6 @@ function Logowanie() {
                 value={loginValue}
                 onChange={(event) => {
                     setLoginValue(event.target.value);
-                    UpdateButton(
-                        passwordValue,
-                        repeatPasswordValue,
-                        event.target.value
-                    );
                 }}
             />
             <label htmlFor="password">Hasło</label>
@@ -53,11 +44,6 @@ function Logowanie() {
                 value={passwordValue}
                 onChange={(event) => {
                     setPasswordValue(event.target.value);
-                    UpdateButton(
-                        event.target.value,
-                        repeatPasswordValue,
-                        loginValue
-                    );
                 }}
             />
             <label htmlFor="repeatPassword">Powtórz hasło</label>
@@ -67,7 +53,6 @@ function Logowanie() {
                 value={repeatPasswordValue}
                 onChange={(event) => {
                     setRepeatPasswordValue(event.target.value);
-                    UpdateButton(passwordValue, event.target.value, loginValue);
                 }}
             />
             <button onClick={Login} disabled={isDisabled}>

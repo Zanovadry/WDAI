@@ -1,8 +1,9 @@
 import Formularz from "./components/formularze/Formularz";
 import NowyKoszyk from "./components/koszyk/NowyKoszyk";
 import NowyLicznik from "./components/liczniki/NowyLicznik";
-import Hasło from "./components/formularze/Hasło";
+import Haslo from "./components/formularze/Haslo";
 import Logowanie from "./components/formularze/Logowanie";
+import Ternary from "./components/inne/Ternary";
 
 function App() {
     return (
@@ -10,8 +11,9 @@ function App() {
             {/*<NowyKoszyk></NowyKoszyk>
             <NowyLicznik></NowyLicznik>
             <Formularz></Formularz>
-            <Hasło></Hasło>*/}
-            <Logowanie></Logowanie>
+            <Haslo></Haslo>
+            <Logowanie></Logowanie>*/}
+            <Ternary></Ternary>
         </>
     );
 }
